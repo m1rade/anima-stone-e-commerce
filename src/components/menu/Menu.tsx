@@ -26,16 +26,24 @@ export const Menu = () => {
 
 const StyledNav = styled.nav`
     width: 100%;
+    height: 50%;
+    padding-left: 40px;
     ul {
         list-style: none;
-        
+
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
         width: 100%;
+        height: 100%;
     }
 
     a {
         text-decoration: none;
-        color: black;
+        color: inherit;
+
+        font-size: 1em;
+        text-transform: uppercase;
     }
 `;
