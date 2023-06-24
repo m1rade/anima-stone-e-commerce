@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/img/logo.png";
 
 export const Logo = () => {
     return (
@@ -10,8 +10,5 @@ export const Logo = () => {
 };
 
 const StyledLogo = styled.a`
-    margin: 0px 20px -20px 0;
-    img {
-        height: 100%;
-    }
-`;
+    
+`

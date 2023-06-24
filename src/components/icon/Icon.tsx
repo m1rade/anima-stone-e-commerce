@@ -8,9 +8,11 @@ type Props = {
     viewBox?: string;
     color?: string;
     onClick?: () => void;
+    onEnter?: () => void;
 };
 
 export const Icon = (props: Props) => {
+
     return (
         <ColoredSvg
             width={props.width || "50"}
@@ -19,8 +21,7 @@ export const Icon = (props: Props) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color={props.color && props.color}
-            onClick={() => props.onClick && props.onClick()}
-            >
+            onClick={() => props.onClick && props.onClick()}>
             <use xlinkHref={`${icons}#${props.iconId}`} />
         </ColoredSvg>
     );
