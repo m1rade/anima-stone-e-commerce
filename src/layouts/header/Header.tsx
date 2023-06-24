@@ -8,18 +8,42 @@ export const Header = () => {
     return (
         <StyledHeader>
             <Logo />
-            <Menu />
-            <Icon iconId="whatsapp" />
-            <Icon iconId="phone" />
-            <span>+7 (499) 258-625-33</span>
-            <SearchBar />
+            <div className="header-container">
+                <div className="contacts">
+                    <Icon iconId="whatsapp" width="20" height="20" viewBox=" 0 0 20 20" />
+                    <Icon iconId="phone" width="20" height="20" viewBox="0 0 20 20" />
+                    <span>+7 (499) 258-625-33</span>
+                    <SearchBar />
+                </div>
+                <Menu />
+            </div>
         </StyledHeader>
     );
 };
 
 const StyledHeader = styled.header`
-  background-color: #8ad507;
-  display: flex;
-  align-items: flex-end;
-  height: 130px;
-`
+    background-color: #8ad507;
+    height: 140px;
+    width: 100vw;
+    padding: 20px 75px;
+
+    display: flex;
+
+    .header-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .contacts {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 20px;
+    }
+`;

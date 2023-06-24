@@ -25,13 +25,13 @@ export const Menu = () => {
 };
 
 const StyledNav = styled.nav`
-    width: 80%;
-
+    width: 100%;
     ul {
         list-style: none;
         
         display: flex;
         justify-content: space-between;
+        width: 100%;
     }
 
     a {
