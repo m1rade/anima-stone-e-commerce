@@ -29,6 +29,10 @@ const StyledHeader = styled.header`
 
     display: flex;
     color: #fff;
+
+    position: sticky;
+    z-index: 99;
+    top: 0;
 `;
 const HeaderContainer = styled.div`
     width: 100%;

@@ -6,7 +6,7 @@ import { Section } from "../../../components/styled/Section.styled";
 
 export const Main = () => {
     return (
-        <MainSection minHeight="100vh">
+        <MainSection minHeight="calc(100vh - 150px)">
             <GridContainer>
                 <LandingInfo>
                     <span>камень с душой</span>
