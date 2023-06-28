@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import landingImg from "../../../assets/img/stones.jpg";
-import { Icon } from "../../../components/icon/Icon";
-import { Section } from "../../../components/styled/Section.styled";
+import { Icon } from "../../../../components/icon/Icon";
+import { Section } from "../../../../components/styled/Section";
+import landingImg from "../../../../assets/img/stones.webp";
 // import bgImage from "../../../assets/img/bg-main.jpg"
 
 export const Main = () => {
@@ -102,6 +102,8 @@ const ArrowBtn = styled.button<ArrowBtnPropsType>`
 const LandingImg = styled.img`
     object-fit: cover;
     padding-bottom: 20px;
+
+    width: 67em;
 
     position: relative;
     z-index: 1;
