@@ -1,11 +1,12 @@
 import React from "react";
-import { Section } from "../../../../components/styled/Section";
-import { ProductCard } from "../../../../components/product-card/ProductCard";
-import { ProductType } from "../../../../constants/products";
-import cardPicture from "../../../../assets/img/card.jpg";
-import { Title } from "../../../../components/Title/Title";
 import styled from "styled-components";
+import cardPicture from "../../../../assets/img/card.jpg";
+import { ProductCard } from "../../../../components/product-card/ProductCard";
 import { FlexContainer } from "../../../../components/styled/FlexContainer";
+import { Section } from "../../../../components/styled/Section";
+import { Title } from "../../../../components/title/Title";
+import { ProductType } from "../../../../constants/products";
+import { LinkButton } from "../../../../components/styled/buttons/LinkButton";
 // import bgImage from "../../../../assets/img/catalogue-3.jpg"
 
 type PropsType = {
@@ -22,9 +23,9 @@ export const Offers: React.FC<PropsType> = ({ products }) => {
                         Учитывая ключевые сценарии поведения, обучения кадров влечет за собой процесс внедрения и
                         модернизации распределения
                     </p>
-                    <a href="#">Перейти в каталог</a>
+                    <LinkButton href="#" linkStyle="primary">Перейти в каталог</LinkButton>
                 </OfferContainer>
-                <a href="#">Смотреть всё</a>
+                <LinkButton linkStyle="options" href="#">Смотреть всё</LinkButton>
                 {products.map((p, i) => {
                     return (
                         <ProductCard

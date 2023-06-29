@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 import { Icon } from "../../../../components/icon/Icon";
 import { Section } from "../../../../components/styled/Section";
 import landingImg from "../../../../assets/img/stones.webp";
+import { LinkButton } from "../../../../components/styled/buttons/LinkButton";
+import { Button } from "../../../../components/styled/buttons/Button";
 // import bgImage from "../../../assets/img/bg-main.jpg"
 
 export const Main = () => {
@@ -10,9 +12,9 @@ export const Main = () => {
             <GridContainer>
                 <LandingInfo>
                     <span>камень с душой</span>
-                    <h1>Каменные изделия для вашего дома</h1>
-                    <button>Рассчитать стоимость</button>
-                    <button>Связаться с нами</button>
+                    <h1>Каменные изделия <span>для вашего дома</span></h1>
+                    <LinkButton href="#" linkStyle="primary">Рассчитать стоимость</LinkButton>
+                    <StyledButton btnStyle="send">Связаться с нами</StyledButton>
                 </LandingInfo>
                 <ArrowBtnsContainer>
                     <ArrowBtn margin="7px">
@@ -57,7 +59,20 @@ const LandingInfo = styled.div`
 
     h1 {
         font-size: 50px;
+
+        span {
+            color: #28553f;
+        }
     }
+`;
+
+const StyledButton = styled(Button)`
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    background-color: #141414;
+    border: none;
+    margin-left: 23px;
 `;
 
 const ArrowBtnsContainer = styled.div`

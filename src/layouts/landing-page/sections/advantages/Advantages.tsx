@@ -1,7 +1,7 @@
-import { Section } from "../../../../components/styled/Section";
-import interiorImg from "../../../../assets/img/interior.webp"
 import styled from "styled-components";
-import { Title } from "../../../../components/Title/Title";
+import interiorImg from "../../../../assets/img/interior.webp";
+import { Section } from "../../../../components/styled/Section";
+import { Title } from "../../../../components/title/Title";
 
 export const Advantages = () => {
     return (
@@ -21,7 +21,7 @@ export const Advantages = () => {
 };
 
 const Img = styled.img`
-object-fit: cover;
+    object-fit: cover;
     width: 23em;
     height: 36.6em;
 `;
