@@ -3,11 +3,14 @@ import { Logo } from "../../components/logo/Logo";
 import { Menu } from "../../components/menu/Menu";
 import { Icon } from "../../components/icon/Icon";
 import { SearchBar } from "./search-bar/SearchBar";
+import logoImg from "../../assets/img/logo.png";
+
+const headerLinks =  ["Каталог", "Акции", "Блог", "Сотрудничество", "Оплата и доставка"];
 
 export const Header = () => {
     return (
         <StyledHeader>
-            <Logo />
+            <Logo src={logoImg} />
             <HeaderContainer>
                 <ContactUs>
                     <Icon iconId="whatsapp" width="20" height="20" viewBox=" 0 0 20 20" />
@@ -15,7 +18,7 @@ export const Header = () => {
                     <span>+7 (499) 258-625-33</span>
                     <SearchBar />
                 </ContactUs>
-                <Menu />
+                <Menu items={headerLinks} />
             </HeaderContainer>
         </StyledHeader>
     );
