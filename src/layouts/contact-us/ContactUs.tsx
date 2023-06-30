@@ -11,13 +11,13 @@ export const ContactUs = () => {
                     Остались вопросы? <br /> свяжитесь с нами, мы вам поможем!
                 </Title>
                 <Subtitle>Заполните форму и мы свяжемся с Вами в ближайшее время</Subtitle>
-                <SuperFlexContainer>
+                <FlexContainer gap="20px">
                     <Field type="text" name="name" placeholder="Ваше имя" required />
                     <Field type="tel" name="phone_number" placeholder="Ваш телефон" required />
                     <FormButton type="submit" btnStyle="send">
                         Отправить
                     </FormButton>
-                </SuperFlexContainer>
+                </FlexContainer>
                 <label htmlFor="eula_accepted">
                     <Checkbox id="eula_accepted" name="eula_accepted" type="checkbox" required />
                     Согласен на обработку персональных данных
@@ -45,10 +45,6 @@ const SectionContactUs = styled.section<SectionPropsType>`
         `} */
 
     padding: 70px 100px;
-`;
-
-const SuperFlexContainer = styled(FlexContainer)`
-    gap: 20px;
 `;
 
 const Title = styled.h3`
