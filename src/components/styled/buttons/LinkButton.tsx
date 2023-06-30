@@ -18,21 +18,21 @@ export const LinkButton = styled.a<Props>`
 
     ${props =>
         props.linkStyle === "primary" &&
-        css<Props>`
+        css`
             background-color: #28553f;
             color: #fff;
         `}
 
     ${props =>
         props.linkStyle === "secondary" &&
-        css<Props>`
+        css`
             background-color: #fff;
             color: #000;
         `}
 
     ${props =>
         props.linkStyle === "options" &&
-        css<Props>`
+        css`
             color: #282a30;
             font-size: 21px;
             font-weight: 300;
