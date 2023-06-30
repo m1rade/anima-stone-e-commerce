@@ -3,16 +3,15 @@ import c1 from "../../../../assets/img/catalogue-1.webp";
 import c2 from "../../../../assets/img/catalogue-2.webp";
 import c3 from "../../../../assets/img/catalogue-3.jpg";
 import c4 from "../../../../assets/img/catalogue-4.webp";
-import { Section } from "../../../../components/styled/Section";
-import { Title } from "../../../../components/title/Title";
+import { ArrowButtons } from "../../../../components/arrow-buttons/ArrowButtons";
 import { LinkButton } from "../../../../components/styled/buttons/LinkButton";
+import { Title } from "../../../../components/title/Title";
 
 export const Catalogue = () => {
     return (
-        <Section style={{ backgroundColor: "#929292" }}>
+        <CatalogueSection>
             <Title>Изделия из натурального камня</Title>
-            <button>{"<"}</button>
-            <button>{">"}</button>
+            <ArrowButtons />
             <LinkButton href="#" linkStyle="options">
                 Смотреть всё
             </LinkButton>
@@ -34,9 +33,13 @@ export const Catalogue = () => {
                     панно
                 </a>
             </GridContainer>
-        </Section>
+        </CatalogueSection>
     );
 };
+
+const CatalogueSection = styled.section`
+    background-color: #929292;
+`;
 
 const GridContainer = styled.div`
     img {

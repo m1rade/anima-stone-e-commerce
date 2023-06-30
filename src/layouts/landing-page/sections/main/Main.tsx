@@ -1,28 +1,26 @@
-import styled, { css } from "styled-components";
-import { Icon } from "../../../../components/icon/Icon";
-import { Section } from "../../../../components/styled/Section";
+import styled from "styled-components";
 import landingImg from "../../../../assets/img/stones.webp";
-import { LinkButton } from "../../../../components/styled/buttons/LinkButton";
+import { ArrowButtons } from "../../../../components/arrow-buttons/ArrowButtons";
 import { Button } from "../../../../components/styled/buttons/Button";
+import { LinkButton } from "../../../../components/styled/buttons/LinkButton";
 // import bgImage from "../../../assets/img/bg-main.jpg"
 
 export const Main = () => {
     return (
-        <MainSection minHeight="calc(100vh - 150px)">
+        <MainSection>
             <GridContainer>
                 <LandingInfo>
                     <span>камень с душой</span>
-                    <h1>Каменные изделия <span>для вашего дома</span></h1>
-                    <LinkButton href="#" linkStyle="primary">Рассчитать стоимость</LinkButton>
+                    <h1>
+                        Каменные изделия <span>для вашего дома</span>
+                    </h1>
+                    <LinkButton href="#" linkStyle="primary">
+                        Рассчитать стоимость
+                    </LinkButton>
                     <StyledButton btnStyle="send">Связаться с нами</StyledButton>
                 </LandingInfo>
                 <ArrowBtnsContainer>
-                    <ArrowBtn margin="7px">
-                        <Icon iconId="left-arrow" width="16" height="16" viewBox="0 0 16 16" />
-                    </ArrowBtn>
-                    <ArrowBtn active>
-                        <Icon iconId="right-arrow" width="16" height="16" viewBox="0 0 16 16" />
-                    </ArrowBtn>
+                    <ArrowButtons />
                 </ArrowBtnsContainer>
                 <LandingImg src={landingImg} alt="interior-example" />
             </GridContainer>
@@ -30,10 +28,12 @@ export const Main = () => {
     );
 };
 
-const MainSection = styled(Section)`
+const MainSection = styled.section`
     background-color: #7c7c7c;
     padding-top: 20px;
     padding-bottom: 50px;
+
+    min-height: calc(100vh - 150px);
 `;
 
 const GridContainer = styled.div`
@@ -66,15 +66,6 @@ const LandingInfo = styled.div`
     }
 `;
 
-const StyledButton = styled(Button)`
-    text-transform: uppercase;
-    font-size: 16px;
-    color: #fff;
-    background-color: #141414;
-    border: none;
-    margin-left: 23px;
-`;
-
 const ArrowBtnsContainer = styled.div`
     grid-area: 1 / 1;
     align-self: end;
@@ -91,27 +82,13 @@ const ArrowBtnsContainer = styled.div`
     }
 `;
 
-type ArrowBtnPropsType = {
-    margin?: string;
-    active?: boolean;
-};
-const ArrowBtn = styled.button<ArrowBtnPropsType>`
-    width: 47px;
-    height: 47px;
-    color: white;
-    background-color: transparent;
-    border: 0.5px solid #fff;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    ${props =>
-        props.active &&
-        css<ArrowBtnPropsType>`
-            background-color: #28553f;
-            border-color: #28553f;
-        `}
+const StyledButton = styled(Button)`
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    background-color: #141414;
+    border: none;
+    margin-left: 23px;
 `;
 
 const LandingImg = styled.img`

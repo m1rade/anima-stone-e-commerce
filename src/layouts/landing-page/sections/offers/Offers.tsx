@@ -3,10 +3,9 @@ import styled from "styled-components";
 import cardPicture from "../../../../assets/img/card.jpg";
 import { ProductCard } from "../../../../components/product-card/ProductCard";
 import { FlexContainer } from "../../../../components/styled/FlexContainer";
-import { Section } from "../../../../components/styled/Section";
+import { LinkButton } from "../../../../components/styled/buttons/LinkButton";
 import { Title } from "../../../../components/title/Title";
 import { ProductType } from "../../../../constants/products";
-import { LinkButton } from "../../../../components/styled/buttons/LinkButton";
 // import bgImage from "../../../../assets/img/catalogue-3.jpg"
 
 type PropsType = {
@@ -15,7 +14,7 @@ type PropsType = {
 
 export const Offers: React.FC<PropsType> = ({ products }) => {
     return (
-        <Section style={{ backgroundColor: "#00707b" }}>
+        <OfferSection>
             <FlexContainer justifyContent="flex-start" alignItems="center" wrap="wrap">
                 <OfferContainer>
                     <Title name="Актуальные акции на " coloredSegment="нашу продукцию" color="#fff" />
@@ -23,9 +22,13 @@ export const Offers: React.FC<PropsType> = ({ products }) => {
                         Учитывая ключевые сценарии поведения, обучения кадров влечет за собой процесс внедрения и
                         модернизации распределения
                     </p>
-                    <LinkButton href="#" linkStyle="primary">Перейти в каталог</LinkButton>
+                    <LinkButton href="#" linkStyle="primary">
+                        Перейти в каталог
+                    </LinkButton>
                 </OfferContainer>
-                <LinkButton linkStyle="options" href="#">Смотреть всё</LinkButton>
+                <LinkButton linkStyle="options" href="#">
+                    Смотреть всё
+                </LinkButton>
                 {products.map((p, i) => {
                     return (
                         <ProductCard
@@ -39,9 +42,13 @@ export const Offers: React.FC<PropsType> = ({ products }) => {
                     );
                 })}
             </FlexContainer>
-        </Section>
+        </OfferSection>
     );
 };
+
+const OfferSection = styled.section`
+    background-color: #00707b;
+`;
 
 const OfferContainer = styled.div`
     width: 50%;

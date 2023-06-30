@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import interiorImg from "../../../../assets/img/interior.webp";
-import { Section } from "../../../../components/styled/Section";
 import { Title } from "../../../../components/title/Title";
 
 export const Advantages = () => {
     return (
-        <Section>
+        <AdvantagesSection>
             <Title name="наши преимущества - " coloredSegment="ваш результат" />
             <ol style={{ margin: "100px" }}>
                 <li>Новейшее итальянское оборудование Donatoni</li>
@@ -16,9 +15,11 @@ export const Advantages = () => {
                 <li>Работаем под ключ</li>
                 <li>Консультации по уходу за иделием из камня</li>
             </ol>
-        </Section>
+        </AdvantagesSection>
     );
 };
+
+const AdvantagesSection = styled.section``;
 
 const Img = styled.img`
     object-fit: cover;
