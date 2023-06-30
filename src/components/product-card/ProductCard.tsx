@@ -58,7 +58,7 @@ const Info = styled.div`
     font-weight: 700;
 `;
 
-const Category = styled.h4`
+const Category = styled.span`
     font-size: 14px;
     font-weight: 700;
     line-height: 22px;
@@ -66,7 +66,7 @@ const Category = styled.h4`
     color: #28553f;
 `;
 
-const Name = styled.h3`
+const Name = styled.span`
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
