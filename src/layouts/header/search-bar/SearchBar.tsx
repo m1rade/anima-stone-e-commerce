@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
 import { Icon } from "../../../components/icon/Icon";
+import { theme } from "../../../styles/theme";
 
 export const SearchBar = () => {
     const [show, setShow] = useState(false);
@@ -30,13 +31,15 @@ const StyledButton = styled.button<ButtonProps>`
 
     padding-left: 10px;
 
+    cursor: pointer;
+
     svg {
-        fill: white;
+        fill: ${theme.colors.fontLight};
     }
 
     ${props =>
         props.show &&
-        css<ButtonProps>`
+        css`
             border: 1px solid rgba(255, 255, 255, 0.81);
             box-shadow: 20px 4px 100px 0px rgba(0, 0, 0, 0.1);
 
@@ -51,10 +54,8 @@ const Search = styled.input.attrs(() => ({
     placeholder: "Поиск...",
 }))`
     background: transparent;
-    height: 100%;
-    width: 100%;
     border: none;
     outline: none;
 
-    color: #9c9c9c;
+    color: ${theme.colors.fontSecondary};
 `;
