@@ -1,50 +1,50 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import bgImage from "../../assets/img/contact-us.webp";
 import { FlexContainer } from "../../components/styled/FlexContainer";
 import { Button } from "../../components/styled/buttons/Button";
+import { Container } from "../../components/styled/Container";
 
 export const ContactUs = () => {
     return (
-        <SectionContactUs id="contact-us" bgImage={bgImage}>
-            <FormContainer>
-                <Title>
-                    Остались вопросы? <br /> свяжитесь с нами, мы вам поможем!
-                </Title>
-                <Subtitle>Заполните форму и мы свяжемся с Вами в ближайшее время</Subtitle>
-                <FlexContainer gap="20px">
-                    <Field type="text" name="name" placeholder="Ваше имя" required />
-                    <Field type="tel" name="phone_number" placeholder="Ваш телефон" required />
-                    <FormButton type="submit" btnStyle="send">
-                        Отправить
-                    </FormButton>
-                </FlexContainer>
-                <label htmlFor="eula_accepted">
-                    <Checkbox id="eula_accepted" name="eula_accepted" type="checkbox" required />
-                    Согласен на обработку персональных данных
-                </label>
-            </FormContainer>
+        <SectionContactUs id="contact-us">
+            <Container>
+                <FormContainer>
+                    <Title>
+                        Остались вопросы? <br /> свяжитесь с нами, мы вам поможем!
+                    </Title>
+                    <Subtitle>Заполните форму и мы свяжемся с Вами в ближайшее время</Subtitle>
+                    <FlexContainer gap="20px">
+                        <Field type="text" name="name" placeholder="Ваше имя" required />
+                        <Field type="tel" name="phone_number" placeholder="Ваш телефон" required />
+                        <FormButton type="submit" btnStyle="send">
+                            Отправить
+                        </FormButton>
+                    </FlexContainer>
+                    <label htmlFor="eula_accepted">
+                        <Checkbox id="eula_accepted" name="eula_accepted" type="checkbox" required />
+                        Согласен на обработку персональных данных
+                    </label>
+                </FormContainer>
+            </Container>
         </SectionContactUs>
     );
 };
 
-type SectionPropsType = {
-    bgImage?: string;
-};
-const SectionContactUs = styled.section<SectionPropsType>`
+const SectionContactUs = styled.section`
     min-height: 50vh;
-    background: linear-gradient(
-        87deg,
-        rgba(0, 0, 0, 0.93) 12.11%,
-        rgba(0, 0, 0, 0.7) 59.96%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    /* ${props =>
-        props.bgImage &&
-        css<SectionPropsType>`
-            background-image: url(${props.bgImage}) no-repeat contain center;
-        `} */
 
-    padding: 70px 100px;
+    background-image: linear-gradient(
+            87deg,
+            rgba(0, 0, 0, 1) 12.11%,
+            rgba(0, 0, 0, 0.80) 59.96%,
+            rgba(255, 255, 255, 0) 100%
+        ),
+        url(${bgImage});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 30%;
+
+    padding: 70px 0;
 `;
 
 const Title = styled.h3`
@@ -70,6 +70,7 @@ const Subtitle = styled.p`
 const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
 
     label {
