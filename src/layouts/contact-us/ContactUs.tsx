@@ -5,7 +5,7 @@ import { Button } from "../../components/styled/buttons/Button";
 
 export const ContactUs = () => {
     return (
-        <SectionContactUs bgImage={bgImage}>
+        <SectionContactUs id="contact-us" bgImage={bgImage}>
             <FormContainer>
                 <Title>
                     Остались вопросы? <br /> свяжитесь с нами, мы вам поможем!

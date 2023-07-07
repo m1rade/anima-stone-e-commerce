@@ -14,6 +14,10 @@ export const Button = styled.button<Props>`
         box-shadow: 0px 0px 47px 3px rgba(0, 0, 0, 0.1);
     }
 
+    &:active {
+        transform: translateY(2px);
+    }
+
     ${props =>
         props.btnStyle === "primary" &&
         css<Props>`

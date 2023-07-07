@@ -41,10 +41,10 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
     background-color: ${theme.colors.secondaryBg};
-    height: 150px;
+    height: 130px;
     width: 100%;
 
-    position: sticky;
+    position: fixed;
     z-index: 99;
     top: 0;
     right: 0;

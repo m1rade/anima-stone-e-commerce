@@ -6,20 +6,24 @@ type Props = {};
 
 export const ArrowButtons: React.FC<Props> = () => {
     return (
-        <>
-            <ArrowBtn>
+        <ArrowBtnContainer>
+            <ArrowBtnLeft>
                 <Icon iconId="left-arrow" width="16" height="16" viewBox="0 0 16 16" />
-            </ArrowBtn>
-            <ArrowBtn active>
+            </ArrowBtnLeft>
+            <ArrowBtnRight active>
                 <Icon iconId="right-arrow" width="16" height="16" viewBox="0 0 16 16" />
-            </ArrowBtn>
-        </>
+            </ArrowBtnRight>
+        </ArrowBtnContainer>
     );
 };
 
 type ArrowBtnPropsType = {
     active?: boolean;
 };
+
+const ArrowBtnContainer = styled.div`
+    display: flex;
+`
 
 const ArrowBtn = styled.button<ArrowBtnPropsType>`
     width: 47px;
@@ -39,3 +43,6 @@ const ArrowBtn = styled.button<ArrowBtnPropsType>`
             border-color: #28553f;
         `}
 `;
+
+const ArrowBtnLeft = styled(ArrowBtn)``;
+const ArrowBtnRight = styled(ArrowBtn)``;
