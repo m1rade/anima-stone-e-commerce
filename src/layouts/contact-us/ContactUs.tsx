@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import bgImage from "../../assets/img/contact-us.webp";
+import { Container } from "../../components/styled/Container";
 import { FlexContainer } from "../../components/styled/FlexContainer";
 import { Button } from "../../components/styled/buttons/Button";
-import { Container } from "../../components/styled/Container";
+import { theme } from "../../styles/theme";
 
 export const ContactUs = () => {
     return (
@@ -16,12 +17,10 @@ export const ContactUs = () => {
                     <FlexContainer gap="20px">
                         <Field type="text" name="name" placeholder="Ваше имя" required />
                         <Field type="tel" name="phone_number" placeholder="Ваш телефон" required />
-                        <FormButton type="submit" btnStyle="send">
-                            Отправить
-                        </FormButton>
+                        <FormButton btnStyle="send">Отправить</FormButton>
                     </FlexContainer>
                     <label htmlFor="eula_accepted">
-                        <Checkbox id="eula_accepted" name="eula_accepted" type="checkbox" required />
+                        <Checkbox id="eula_accepted" name="eula_accepted" required />
                         Согласен на обработку персональных данных
                     </label>
                 </FormContainer>
@@ -31,12 +30,10 @@ export const ContactUs = () => {
 };
 
 const SectionContactUs = styled.section`
-    min-height: 50vh;
-
     background-image: linear-gradient(
             87deg,
             rgba(0, 0, 0, 1) 12.11%,
-            rgba(0, 0, 0, 0.80) 59.96%,
+            rgba(0, 0, 0, 0.8) 59.96%,
             rgba(255, 255, 255, 0) 100%
         ),
         url(${bgImage});
@@ -48,20 +45,18 @@ const SectionContactUs = styled.section`
 `;
 
 const Title = styled.h3`
-    color: #fff;
+    color: ${theme.colors.fontLight};
 
     font-size: 28px;
-    font-style: normal;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1.4em;
 `;
 
 const Subtitle = styled.p`
-    color: #fff;
+    color: ${theme.colors.fontLight};
 
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
 
     margin-top: -10px;
@@ -94,7 +89,9 @@ const Field = styled.input`
     font-weight: 400;
 `;
 
-const Checkbox = styled.input`
+const Checkbox = styled.input.attrs(props => ({
+    type: "checkbox",
+}))`
     width: 14px;
     height: 14px;
 
@@ -105,7 +102,9 @@ const Checkbox = styled.input`
     margin-right: 10px;
 `;
 
-const FormButton = styled(Button)`
+const FormButton = styled(Button).attrs(props => ({
+    type: "submit",
+}))`
     min-width: 240px;
 
     color: #000;
